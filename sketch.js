@@ -50,7 +50,7 @@ function preload()
 
 function setup()
 {
-	createCanvas(1024, 576);
+	createCanvas(window.innerWidth, window.innerHeight);
 	floorPos_y = height * 3/4;
     lives = 4; //initial lives
     start_Game(); //game starts
@@ -308,7 +308,7 @@ function draw()
 	// Logic to make the game character move or the background scroll.
 	if(isLeft)
 	{
-		if(gameChar_x > width * 0.2)
+		if(gameChar_x > width * 0.8)
 		{
 			gameChar_x -= 3;
 		}
@@ -320,7 +320,7 @@ function draw()
 
 	if(isRight)
 	{
-		if(gameChar_x < width * 0.8)
+		if(gameChar_x < width * 0.5)
 		{
 			gameChar_x  += 3;
 		}
