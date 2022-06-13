@@ -1234,11 +1234,11 @@ function Enemy(x, y, range, axis, type)
                 if(gameChar_world_x > 2100 && gameChar_world_x < flagpole.x_pos)
                     {
                         if(gameChar_world_x < this.current_x){
-                            this.current_x -= 1.7;
+                            this.current_x -= 2;
                         }
                         else if(gameChar_world_x > this.current_x)
                             {
-                                this.current_x += 1.7;
+                                this.current_x += 2;
                             }
                         
                     }
