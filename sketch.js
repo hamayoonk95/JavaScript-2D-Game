@@ -182,6 +182,7 @@ function start_Game()
 function draw()
 {
 	background(100, 155, 255); // fill the sky blue
+    console.log(gameChar_y)
 
 	noStroke();
 	fill(0,155,0);
@@ -912,29 +913,29 @@ function drawCanyon(t_canyon)
     rect(t_canyon.pos_X - 2,
          t_canyon.pos_Y,
          t_canyon.width,
-         176);
+         window.innerHeight - t_canyon.pos_Y);
     
     for(var i = 0; i < 7; i ++)
     {   
         //Arrows
          stroke(0);
          line(t_canyon.pos_X + 8 + i * 14,
-         t_canyon.pos_Y + 144,
+         t_canyon.pos_Y + 200,
          t_canyon.pos_X + 8 + i * 14,
-         t_canyon.pos_Y + 119);
+         t_canyon.pos_Y + 100);
         
          line(t_canyon.pos_X + 11 + i * 14,
-         t_canyon.pos_Y + 144,
+         t_canyon.pos_Y + 200,
          t_canyon.pos_X + 11 + i * 14,
-         t_canyon.pos_Y + 119);
+         t_canyon.pos_Y + 100);
         
         fill(0,0,128);
          triangle(t_canyon.pos_X + 5 + i * 14,
-         t_canyon.pos_Y + 123,
+         t_canyon.pos_Y + 100,
          t_canyon.pos_X + 10 + i * 14,
-         t_canyon.pos_Y + 118,
+         t_canyon.pos_Y + 95,
          t_canyon.pos_X + 15 + i * 14,
-         t_canyon.pos_Y + 123);
+         t_canyon.pos_Y + 100);
     }
 
 }
@@ -947,7 +948,7 @@ function checkCanyon(t_canyon)
         isPlummeting = true;
     }
     //if gamecharacter is on spikes then make gameover character true and stop it from moving and jumping
-    if(gameChar_y == 552)
+    if(gameChar_y >= floorPos_y + 90)
         {
             isPlummeting = false;
             gameOver = true;
